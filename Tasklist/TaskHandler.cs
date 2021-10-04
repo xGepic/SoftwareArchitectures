@@ -95,5 +95,9 @@ namespace Tasklist
                 Console.WriteLine("\nError: Please enter an Integer!\n");
             }
         }
+        public void Update()
+        {
+            //to do
+        }
     }
 }

@@ -15,9 +15,8 @@ namespace Tasklist
             Console.WriteLine("2 - Update a Task in the List");
             Console.WriteLine("3 - Display the List");
             Console.WriteLine("4 - Delete a Task in the List");
-            Console.WriteLine("5 - Prioritize a Task in the List");
-            Console.WriteLine("6 - Filter Tasks in a List");
-            Console.WriteLine("7 - Exit");
+            Console.WriteLine("5 - Filter Tasks in a List");
+            Console.WriteLine("6 - Exit");
             Console.Write("Input: ");
             try
             {

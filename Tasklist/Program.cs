@@ -17,6 +17,7 @@ namespace Tasklist
                         taskHandler.AddTask();
                         break;
                     case 2:
+                        taskHandler.Update(); //todo
                         break;
                     case 3:
                         taskHandler.Display();
@@ -27,8 +28,6 @@ namespace Tasklist
                     case 5:
                         break;
                     case 6:
-                        break;
-                    case 7:
                         return;
                     default:
                         ToolBox.WrongNumber();

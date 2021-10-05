@@ -47,5 +47,29 @@ namespace Tasklist
             }
             Console.WriteLine("\nError: Invalid Input: Use Numbers 1-6!\n");
         }
+        public static int GetFilterMenu()
+        {
+            Console.WriteLine("What do you want to filter by?\n");
+            Console.WriteLine("1 - Sort by Priority");
+            Console.WriteLine("2 - Display High Priority Task (>50)");
+            Console.WriteLine("3 - Display High Priority Task (<50)");
+            Console.Write("Input: ");
+            try
+            {
+                int input = Convert.ToInt32(Console.ReadLine());
+                if (input < 1 || input > 3)
+                {
+                    Console.WriteLine("\nError: Please enter a valid Integer (1 - 3)!\n");
+                    return -1;
+                }
+                return input;
+            }
+            catch (FormatException)
+            {
+                Console.Clear();
+                Console.WriteLine("\nError: Invalid Input!\n");
+                return -1;
+            }
+        }
     }
 }

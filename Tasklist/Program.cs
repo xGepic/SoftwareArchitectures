@@ -6,7 +6,7 @@ namespace Tasklist
     {
         static void Main()
         {
-            TaskHandler taskHandler = new TaskHandler(ToolBox.Welcome());
+            var taskHandler = new TaskHandler(ToolBox.Welcome());
             taskHandler.Hello();
             while (true)
             {
@@ -17,7 +17,7 @@ namespace Tasklist
                         taskHandler.AddTask();
                         break;
                     case 2:
-                        taskHandler.Update(); //todo
+                        taskHandler.Update();
                         break;
                     case 3:
                         taskHandler.Display();
@@ -26,6 +26,7 @@ namespace Tasklist
                         taskHandler.Delete();
                         break;
                     case 5:
+                        taskHandler.Filter();
                         break;
                     case 6:
                         return;

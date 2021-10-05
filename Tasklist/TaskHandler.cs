@@ -8,7 +8,7 @@ namespace Tasklist
 {
     class TaskHandler
     {
-        List<Task> TaskList = new List<Task>();
+        private List<Task> TaskList = new();
         private readonly string ListOwner;
         public TaskHandler(string name)
         {
@@ -35,8 +35,9 @@ namespace Tasklist
                     return;
                 }
                 Console.WriteLine();
-                Task TempTask = new Task(name, text, num);
+                var TempTask = new Task(name, text, num);
                 TaskList.Add(TempTask);
+                Console.WriteLine("\nTask successfully added!\n");
             }
             catch (FormatException)
             {
@@ -47,7 +48,7 @@ namespace Tasklist
         public void Display()
         {
             int i = 1;
-            if (!TaskList.Any())
+            if (IsEmpty(TaskList))
             {
                 Console.Clear();
                 Console.WriteLine();
@@ -74,7 +75,7 @@ namespace Tasklist
             int count = TaskList.Count;
             Console.Clear();
             Display();
-            if(count == 0)
+            if (count == 0)
             {
                 return;
             }
@@ -82,12 +83,13 @@ namespace Tasklist
             try
             {
                 int del = Convert.ToInt32(Console.ReadLine());
-                if (del < 0 || del > count)
+                if (del < 1 || del > count)
                 {
                     Console.WriteLine("\nError: Please enter a valid Integer!\n");
                     return;
                 }
                 TaskList.RemoveAt(del - 1);
+                Console.WriteLine("\nTask successfully removed!\n");
             }
             catch (FormatException)
             {
@@ -97,7 +99,98 @@ namespace Tasklist
         }
         public void Update()
         {
-            //to do
+            int count = TaskList.Count;
+            Console.Clear();
+            Display();
+            if (IsEmpty(TaskList))
+            {
+                return;
+            }
+            Console.Write("Which Task would You like to Update?: ");
+            try
+            {
+                int update = Convert.ToInt32(Console.ReadLine());
+                if (update < 1 || update > count)
+                {
+                    Console.WriteLine("\nError: Please enter a valid Integer!\n");
+                    return;
+                }
+                Console.Write("Please enter a TaskName: ");
+                string name = Console.ReadLine();
+                Console.Write("Please enter a Description: ");
+                string text = Console.ReadLine();
+                Console.Write("Please enter a Priority (0 - 100): ");
+                uint num = Convert.ToUInt32(Console.ReadLine());
+                if (num < 0 || num > 100)
+                {
+                    Console.WriteLine("\nError: Please enter a valid Integer (0 - 100)!\n");
+                    return;
+                }
+                var TempTask = new Task(name, text, num);
+                TaskList[update - 1] = TempTask;
+                Console.WriteLine("\nTask successfully updated!\n");
+            }
+            catch (FormatException)
+            {
+                Console.Clear();
+                Console.WriteLine("\nError: Please enter an Integer!\n");
+            }
+        }
+        public void Filter()
+        {
+            Console.Clear();
+            if (IsEmpty(TaskList))
+            {
+                Console.Clear();
+                Console.WriteLine();
+                Console.WriteLine("The List is Empty!\n");
+                return;
+            }
+            int input = ToolBox.GetFilterMenu();
+            if (input == -1)
+            {
+                return;
+            }
+            if (input == 1)
+            {
+                TaskList = TaskList.OrderByDescending(x => x.Priority).ToList();
+                Console.WriteLine("Ordered TaskList!");
+                Display();
+            }
+            if (input == 2)
+            {
+                foreach (Task task in TaskList) if (task.Priority > 50)
+                    {
+                        Console.Write("Name: ");
+                        Console.Write(task.TaskName + "\n");
+                        Console.Write("Description: ");
+                        Console.Write(task.TaskText + "\n");
+                        Console.Write("Priority: ");
+                        Console.Write(task.Priority + "\n");
+                        Console.WriteLine();
+                    }
+            }
+            if (input == 3)
+            {
+                foreach (Task task in TaskList) if (task.Priority < 50)
+                    {
+                        Console.Write("Name: ");
+                        Console.Write(task.TaskName + "\n");
+                        Console.Write("Description: ");
+                        Console.Write(task.TaskText + "\n");
+                        Console.Write("Priority: ");
+                        Console.Write(task.Priority + "\n");
+                        Console.WriteLine();
+                    }
+            }
+        }
+        public static bool IsEmpty(List<Task> taskList)
+        {
+            if (taskList.Any())
+            {
+                return false;
+            }
+            return true;
         }
     }
 }

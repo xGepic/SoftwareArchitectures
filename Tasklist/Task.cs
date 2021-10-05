@@ -11,6 +11,7 @@ namespace Tasklist
         public string TaskName { get; set; }
         public string TaskText { get; set; }
         public uint Priority { get; set; }
+        public DateTime DueDate { get; set; }
         public Task(string name, string text, uint num)
         {
             TaskName = name;

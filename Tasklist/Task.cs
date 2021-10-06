@@ -12,11 +12,12 @@ namespace Tasklist
         public string TaskText { get; set; }
         public uint Priority { get; set; }
         public DateTime DueDate { get; set; }
-        public Task(string name, string text, uint num)
+        public Task(string name, string text, uint num, DateTime date)
         {
             TaskName = name;
             TaskText = text;
             Priority = num;
+            DueDate = date;
         }
     }
 }

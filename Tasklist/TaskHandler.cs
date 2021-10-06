@@ -37,8 +37,11 @@ namespace Tasklist
                     Console.WriteLine("\nError: Please enter a valid Integer (0 - 100)!\n");
                     return;
                 }
+                Console.Write("In how many Days is the Task due?: ");
+                uint days = Convert.ToUInt32(Console.ReadLine());
+                DateTime due = DateTime.Today.AddDays(days);
+                var TempTask = new Task(name, text, num, due);
                 Console.WriteLine();
-                var TempTask = new Task(name, text, num);
                 TaskList.Add(TempTask);
                 Console.WriteLine("\nTask successfully added!\n");
             }
@@ -69,6 +72,8 @@ namespace Tasklist
                 Console.Write(task.TaskText + "\n");
                 Console.Write("Priority: ");
                 Console.Write(task.Priority + "\n");
+                Console.Write("DueDate: ");
+                Console.Write(task.DueDate.ToLongDateString() + "\n");
                 Console.WriteLine();
                 i++;
             }
@@ -129,8 +134,8 @@ namespace Tasklist
                     Console.WriteLine("\nError: Please enter a valid Integer (0 - 100)!\n");
                     return;
                 }
-                var TempTask = new Task(name, text, num);
-                TaskList[update - 1] = TempTask;
+                //var TempTask = new Task(name, text, num);
+                //TaskList[update - 1] = TempTask;
                 Console.WriteLine("\nTask successfully updated!\n");
             }
             catch (FormatException)

@@ -170,29 +170,7 @@ namespace Tasklist
             }
             if (input == 2)
             {
-                foreach (Task task in TaskList) if (task.Priority > Fif)
-                    {
-                        Console.Write("Name: ");
-                        Console.Write(task.TaskName + "\n");
-                        Console.Write("Description: ");
-                        Console.Write(task.TaskText + "\n");
-                        Console.Write("Priority: ");
-                        Console.Write(task.Priority + "\n");
-                        Console.WriteLine();
-                    }
-            }
-            if (input == 3)
-            {
-                foreach (Task task in TaskList) if (task.Priority < Fif)
-                    {
-                        Console.Write("Name: ");
-                        Console.Write(task.TaskName + "\n");
-                        Console.Write("Description: ");
-                        Console.Write(task.TaskText + "\n");
-                        Console.Write("Priority: ");
-                        Console.Write(task.Priority + "\n");
-                        Console.WriteLine();
-                    }
+                //to do
             }
         }
         public static bool IsEmpty(List<Task> taskList)

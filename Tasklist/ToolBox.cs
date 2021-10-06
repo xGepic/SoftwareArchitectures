@@ -10,7 +10,7 @@ namespace Tasklist
     {
         private static bool FormatFlag = false;
         private const int One = 1;
-        private const int Three = 3;
+        private const int Two = 2;
         public static int GetMenu()
         {
             Console.WriteLine("1 - Insert a new Task into the List");
@@ -53,15 +53,14 @@ namespace Tasklist
         {
             Console.WriteLine("What do you want to filter by?\n");
             Console.WriteLine("1 - Sort by Priority");
-            Console.WriteLine("2 - Display High Priority Task (>50)");
-            Console.WriteLine("3 - Display High Priority Task (<50)");
+            Console.WriteLine("1 - Sort by DueDate");
             Console.Write("Input: ");
             try
             {
                 int input = Convert.ToInt32(Console.ReadLine());
-                if (input < One || input > Three)
+                if (input < One || input > Two)
                 {
-                    Console.WriteLine("\nError: Please enter a valid Integer (1 - 3)!\n");
+                    Console.WriteLine("\nError: Please enter a valid Integer (1 - 2)!\n");
                     return -1;
                 }
                 return input;

@@ -10,6 +10,9 @@ namespace Tasklist
     {
         private List<Task> TaskList = new();
         private readonly string ListOwner;
+        private const int Min = 0;
+        private const int Fif = 50;
+        private const int Max = 100;
         public TaskHandler(string name)
         {
             ListOwner = name;
@@ -29,7 +32,7 @@ namespace Tasklist
             try
             {
                 uint num = Convert.ToUInt32(Console.ReadLine());
-                if (num < 0 || num > 100)
+                if (num < Min || num > Max)
                 {
                     Console.WriteLine("\nError: Please enter a valid Integer (0 - 100)!\n");
                     return;
@@ -75,7 +78,7 @@ namespace Tasklist
             int count = TaskList.Count;
             Console.Clear();
             Display();
-            if (count == 0)
+            if (count == Min)
             {
                 return;
             }
@@ -121,7 +124,7 @@ namespace Tasklist
                 string text = Console.ReadLine();
                 Console.Write("Please enter a Priority (0 - 100): ");
                 uint num = Convert.ToUInt32(Console.ReadLine());
-                if (num < 0 || num > 100)
+                if (num < Min || num > Max)
                 {
                     Console.WriteLine("\nError: Please enter a valid Integer (0 - 100)!\n");
                     return;
@@ -159,7 +162,7 @@ namespace Tasklist
             }
             if (input == 2)
             {
-                foreach (Task task in TaskList) if (task.Priority > 50)
+                foreach (Task task in TaskList) if (task.Priority > Fif)
                     {
                         Console.Write("Name: ");
                         Console.Write(task.TaskName + "\n");
@@ -172,7 +175,7 @@ namespace Tasklist
             }
             if (input == 3)
             {
-                foreach (Task task in TaskList) if (task.Priority < 50)
+                foreach (Task task in TaskList) if (task.Priority < Fif)
                     {
                         Console.Write("Name: ");
                         Console.Write(task.TaskName + "\n");

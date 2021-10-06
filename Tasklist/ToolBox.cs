@@ -9,6 +9,8 @@ namespace Tasklist
     public static class ToolBox
     {
         private static bool FormatFlag = false;
+        private const int One = 1;
+        private const int Three = 3;
         public static int GetMenu()
         {
             Console.WriteLine("1 - Insert a new Task into the List");
@@ -57,7 +59,7 @@ namespace Tasklist
             try
             {
                 int input = Convert.ToInt32(Console.ReadLine());
-                if (input < 1 || input > 3)
+                if (input < One || input > Three)
                 {
                     Console.WriteLine("\nError: Please enter a valid Integer (1 - 3)!\n");
                     return -1;

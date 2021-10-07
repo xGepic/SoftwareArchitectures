@@ -23,7 +23,7 @@ namespace Tasklist
         }
         public void AddTask()
         {
-            Console.WriteLine();
+            Console.Clear();
             Console.Write("Please enter a TaskName: ");
             string name = Console.ReadLine();
             Console.Write("Please enter a Description: ");
@@ -165,12 +165,12 @@ namespace Tasklist
             if (input == 1)
             {
                 TaskList = TaskList.OrderByDescending(x => x.Priority).ToList();
-                Console.WriteLine("Ordered TaskList!");
-                Display();
+                Console.WriteLine("\nTasklist Ordered!\n");
             }
             if (input == 2)
             {
-                //to do
+                TaskList = TaskList.OrderBy(x => x.DueDate).ToList();
+                Console.WriteLine("\nTasklist Ordered!\n");
             }
         }
         public static bool IsEmpty(List<Task> taskList)

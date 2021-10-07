@@ -53,7 +53,7 @@ namespace Tasklist
         {
             Console.WriteLine("What do you want to filter by?\n");
             Console.WriteLine("1 - Sort by Priority");
-            Console.WriteLine("1 - Sort by DueDate");
+            Console.WriteLine("2 - Sort by DueDate");
             Console.Write("Input: ");
             try
             {

@@ -214,9 +214,9 @@ namespace Tasklist
                     Console.Write(task.Priority + "\n");
                     Console.Write("DueDate: ");
                     Console.Write(task.DueDate.ToLongDateString() + "\n");
-                    Console.WriteLine();
                     i++;
                 }
+            Console.WriteLine("\n");
         }
         private static bool IsEmpty(List<Task> taskList)
         {

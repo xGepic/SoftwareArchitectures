@@ -11,7 +11,6 @@ namespace Tasklist
         private List<Task> TaskList = new();
         private readonly string ListOwner;
         private const int Min = 0;
-        private const int Fif = 50;
         private const int Max = 100;
         public TaskHandler(string name)
         {

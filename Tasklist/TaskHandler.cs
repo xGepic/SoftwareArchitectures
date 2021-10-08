@@ -172,7 +172,7 @@ namespace Tasklist
                 Console.WriteLine("\nTasklist Ordered!\n");
             }
         }
-        public static bool IsEmpty(List<Task> taskList)
+        private static bool IsEmpty(List<Task> taskList)
         {
             if (taskList.Any())
             {

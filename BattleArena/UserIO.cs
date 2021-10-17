@@ -42,7 +42,7 @@ namespace BattleArena
         public void EndGame(String name)
         {
             Console.Clear();
-            Console.WriteLine(name + "lost the game!");
+            Console.WriteLine(name + " lost the game!");
         }
         public void ExitGame()
         {

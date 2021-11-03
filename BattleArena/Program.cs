@@ -6,7 +6,7 @@ namespace BattleArena
 {
     class Program
     {
-        static void Main(string[] args)
+        static void Main()
         {
             UserIO userinteraction = new();
             Random randomNumberGenerator = new();
@@ -69,11 +69,11 @@ namespace BattleArena
                     currentHero.UpdateCoins();
                     if (currentHero.Name == "Player 1")
                     {
-                        currentHero.useGoblins(playerList[1]);
+                        currentHero.UseGoblins(playerList[1]);
                     }
                     else
                     {
-                        currentHero.useGoblins(playerList[0]);
+                        currentHero.UseGoblins(playerList[0]);
                     }
                 }
                 // end condition

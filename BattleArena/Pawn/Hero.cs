@@ -30,7 +30,7 @@ namespace BattleArena.Pawn
         {
             this.Coins += this.Leprechaun + 1;
         }
-        public void useGoblins(Hero other)
+        public void UseGoblins(Hero other)
         {
             foreach (Goblin tmpGoblin in this.goblins)
             {

@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
 //Singleton
 
@@ -11,7 +7,7 @@ namespace BattleArena
     class LoggingSystem
     {
         private static readonly LoggingSystem instance = new();
-        private LinkedList<string> myLog = new();
+        public readonly LinkedList<string> myLog = new();
         private LoggingSystem()
         {
 
@@ -19,6 +15,10 @@ namespace BattleArena
         public static LoggingSystem GetLoggingSystem()
         {
             return instance;
+        }
+        public void LogSomething(string message)
+        {
+            myLog.AddLast(message);
         }
     }
 }

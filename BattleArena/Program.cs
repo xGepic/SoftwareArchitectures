@@ -8,7 +8,9 @@ namespace BattleArena
     {
         static void Main()
         {
-            LoggingSystem MyLog = LoggingSystem.GetLoggingSystem();
+
+            //To Do
+
             UserIO userinteraction = new();
             Random randomNumberGenerator = new();
             Hero[] playerList = { new Hero("Player 1", new CynradBow(randomNumberGenerator)), new Hero("Player 2", new CynradBow(randomNumberGenerator)) };

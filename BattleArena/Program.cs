@@ -1,6 +1,7 @@
 ﻿using BattleArena.Items;
 using BattleArena.Pawn;
 using System;
+using System.Threading;
 
 namespace BattleArena
 {
@@ -8,9 +9,13 @@ namespace BattleArena
     {
         static void Main()
         {
-
-            //To Do
-
+            //TO-DO
+            LoggingSystem myLogger = LoggingSystem.GetLoggingSystem();
+            myLogger.LogSomething("Test1");
+            myLogger.LogSomething("Test2");
+            myLogger.WriteListToFile();
+            Thread.Sleep(10000);
+            //TO-DO
             UserIO userinteraction = new();
             Random randomNumberGenerator = new();
             Hero[] playerList = { new Hero("Player 1", new CynradBow(randomNumberGenerator)), new Hero("Player 2", new CynradBow(randomNumberGenerator)) };

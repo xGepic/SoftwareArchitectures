@@ -12,6 +12,8 @@ namespace BattleArena.Items
         public CynradBow(Random randomNumberGenerator)
         {
             this.randomNumberGenerator = randomNumberGenerator;
+            LoggingSystem myLog = LoggingSystem.GetLoggingSystem();
+            myLog.LogSomething("CynradBow Created!");
         }
         public void Use(Hero other)
         {

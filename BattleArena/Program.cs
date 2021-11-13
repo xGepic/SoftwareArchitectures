@@ -9,13 +9,6 @@ namespace BattleArena
     {
         static void Main()
         {
-            //TO-DO
-            LoggingSystem myLogger = LoggingSystem.GetLoggingSystem();
-            myLogger.LogSomething("Test1");
-            myLogger.LogSomething("Test2");
-            myLogger.WriteListToFile();
-            Thread.Sleep(10000);
-            //TO-DO
             UserIO userinteraction = new();
             Random randomNumberGenerator = new();
             Hero[] playerList = { new Hero("Player 1", new CynradBow(randomNumberGenerator)), new Hero("Player 2", new CynradBow(randomNumberGenerator)) };
@@ -89,11 +82,15 @@ namespace BattleArena
                 {
                     userinteraction.EndGame(playerList[0].Name);
                     run = false;
+                    LoggingSystem myLog = LoggingSystem.GetLoggingSystem();
+                    myLog.WriteListToFile();
                 }
                 else if (playerList[1].Health <= 0)
                 {
                     userinteraction.EndGame(playerList[1].Name);
                     run = false;
+                    LoggingSystem myLog = LoggingSystem.GetLoggingSystem();
+                    myLog.WriteListToFile();
                 }
             }
         }

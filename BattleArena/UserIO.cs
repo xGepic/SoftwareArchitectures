@@ -5,6 +5,11 @@ namespace BattleArena
 {
     public class UserIO
     {
+        public UserIO()
+        {
+            LoggingSystem myLog = LoggingSystem.GetLoggingSystem();
+            myLog.LogSomething("UserIO Created!");
+        }
         public void PrintFightMenu(string name)
         {
             Console.WriteLine("+--------------------------------------->  ");
@@ -43,6 +48,8 @@ namespace BattleArena
         {
             ClearScreen();
             Console.WriteLine("Bye\n");
+            LoggingSystem myLog = LoggingSystem.GetLoggingSystem();
+            myLog.WriteListToFile();
         }
         public void ClearScreen()
         {

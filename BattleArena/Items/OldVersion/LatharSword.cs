@@ -10,6 +10,8 @@ namespace BattleArena.Items.OldVersion
         public LatharSword(Random randomNumberGenerator)
         {
             this.randomNumberGenerator = randomNumberGenerator;
+            LoggingSystem myLog = LoggingSystem.GetLoggingSystem();
+            myLog.LogSomething("LatharSword Created!");
         }
         public int Hit()
         {

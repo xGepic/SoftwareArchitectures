@@ -10,7 +10,8 @@ namespace BattleArena
     {
         private static readonly LoggingSystem instance = new();
         private readonly LinkedList<string> myLog = new();
-        private int counter = 1;
+        private int PrintLogCounte = 1;
+        private int WriteListToFileCounter = 1;
         private LoggingSystem()
         {
 
@@ -28,8 +29,8 @@ namespace BattleArena
             Console.WriteLine("Full Log:\n\n");
             foreach (var item in myLog)
             {
-                Console.WriteLine($"{counter}. {item}");
-                counter++;
+                Console.WriteLine($"{PrintLogCounte}. {item}");
+                PrintLogCounte++;
             }
         }
         public void WriteListToFile()
@@ -44,8 +45,8 @@ namespace BattleArena
             using StreamWriter sw = new(fileName);
             foreach (var item in myLog)
             {
-                sw.WriteLine($"{counter}. {item}");
-                counter++;
+                sw.WriteLine($"{WriteListToFileCounter}. {item}");
+                WriteListToFileCounter++;
             }
         }
     }

@@ -20,6 +20,9 @@ namespace BattleArena.Pawn
             this.weapon = equipment;
 
             this.lastKeyInput = -1;
+
+            LoggingSystem myLog = LoggingSystem.GetLoggingSystem();
+            myLog.LogSomething("Hero Created!");
         }
         public bool Action(Hero other)
         {

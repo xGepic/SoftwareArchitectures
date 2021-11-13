@@ -11,6 +11,8 @@ namespace BattleArena.Pawn
         {
             this.strength = strength;
             this.randomNumberGenerator = randomNumberGenerator;
+            LoggingSystem myLog = LoggingSystem.GetLoggingSystem();
+            myLog.LogSomething("Goblin Created!");
         }
         internal void Action(Hero other)
         {

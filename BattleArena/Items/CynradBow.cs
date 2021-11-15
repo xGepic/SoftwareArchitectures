@@ -13,7 +13,7 @@ namespace BattleArena.Items
         {
             this.randomNumberGenerator = randomNumberGenerator;
             LoggingSystem myLog = LoggingSystem.GetLoggingSystem();
-            myLog.LogSomething("CynradBow Created!");
+            myLog.LogSomething($"CynradBow Created at {myLog.GetTimeStamp()}");
         }
         public void Use(Hero other)
         {

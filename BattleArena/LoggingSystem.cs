@@ -46,8 +46,13 @@ namespace BattleArena
             foreach (var item in myLog)
             {
                 sw.WriteLine($"{WriteListToFileCounter}. {item}");
+                sw.WriteLine();
                 WriteListToFileCounter++;
             }
+        }
+        public string GetTimeStamp()
+        {
+            return DateTime.Now.ToString("hh.mm.ss.ffff") + " by " + Environment.UserName.ToString();
         }
     }
 }

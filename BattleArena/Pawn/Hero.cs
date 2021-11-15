@@ -22,7 +22,7 @@ namespace BattleArena.Pawn
             this.lastKeyInput = -1;
 
             LoggingSystem myLog = LoggingSystem.GetLoggingSystem();
-            myLog.LogSomething("Hero Created!");
+            myLog.LogSomething($"Hero Created at {myLog.GetTimeStamp()}");
         }
         public bool Action(Hero other)
         {

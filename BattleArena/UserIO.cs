@@ -8,7 +8,7 @@ namespace BattleArena
         public UserIO()
         {
             LoggingSystem myLog = LoggingSystem.GetLoggingSystem();
-            myLog.LogSomething("UserIO Created!");
+            myLog.LogSomething($"UserIO Created at {myLog.GetTimeStamp()}");
         }
         public void PrintFightMenu(string name)
         {

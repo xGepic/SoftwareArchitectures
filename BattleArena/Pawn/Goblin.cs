@@ -12,7 +12,7 @@ namespace BattleArena.Pawn
             this.strength = strength;
             this.randomNumberGenerator = randomNumberGenerator;
             LoggingSystem myLog = LoggingSystem.GetLoggingSystem();
-            myLog.LogSomething("Goblin Created!");
+            myLog.LogSomething($"Goblin Created at {myLog.GetTimeStamp()}");
         }
         internal void Action(Hero other)
         {

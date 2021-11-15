@@ -11,7 +11,7 @@ namespace BattleArena.Items.OldVersion
         {
             this.randomNumberGenerator = randomNumberGenerator;
             LoggingSystem myLog = LoggingSystem.GetLoggingSystem();
-            myLog.LogSomething("LatharSword Created!");
+            myLog.LogSomething($"LatharSword Created at {myLog.GetTimeStamp()}");
         }
         public int Hit()
         {

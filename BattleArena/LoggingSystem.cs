@@ -52,7 +52,7 @@ namespace BattleArena
         }
         public string GetTimeStamp()
         {
-            return DateTime.Now.ToString("hh.mm.ss.ffff") + " by " + Environment.UserName.ToString();
+            return DateTime.Now.ToString("hh:mm:ss:ffff") + " by " + Environment.UserName.ToString();
         }
     }
 }

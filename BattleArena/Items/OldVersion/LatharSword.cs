@@ -2,6 +2,7 @@
 
 namespace BattleArena.Items.OldVersion
 {
+    //Service Class
     public class LatharSword
     {
         private const int percentageVariable = 4;

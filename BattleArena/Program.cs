@@ -84,6 +84,7 @@ namespace BattleArena
                     run = false;
                     LoggingSystem myLog = LoggingSystem.GetLoggingSystem();
                     myLog.WriteListToFile();
+                    myLog.PrintLog();
                 }
                 else if (playerList[1].Health <= 0)
                 {
@@ -91,6 +92,7 @@ namespace BattleArena
                     run = false;
                     LoggingSystem myLog = LoggingSystem.GetLoggingSystem();
                     myLog.WriteListToFile();
+                    myLog.PrintLog();
                 }
             }
         }

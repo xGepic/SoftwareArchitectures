@@ -42,7 +42,7 @@ namespace BattleArena
         public void EndGame(String name)
         {
             ClearScreen();
-            Console.WriteLine(name + "lost the game!");
+            Console.WriteLine(name + " lost the game!");
         }
         public void ExitGame()
         {
@@ -50,6 +50,7 @@ namespace BattleArena
             Console.WriteLine("Bye\n");
             LoggingSystem myLog = LoggingSystem.GetLoggingSystem();
             myLog.WriteListToFile();
+            myLog.PrintLog();
         }
         public void ClearScreen()
         {

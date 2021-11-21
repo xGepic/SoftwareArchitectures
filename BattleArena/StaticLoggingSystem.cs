@@ -4,26 +4,18 @@ using System.IO;
 
 namespace BattleArena
 {
-    //Singleton
-    class LoggingSystem
+    //Static Implementation
+    //This Class is unused because I choose lazy Implementation
+    static class StaticLoggingSystem
     {
-        private static readonly LoggingSystem instance = new();
-        private readonly LinkedList<string> myLog = new();
-        private int PrintLogCounter = 1;
-        private int WriteListToFileCounter = 1;
-        private LoggingSystem()
-        {
-
-        }
-        public static LoggingSystem GetLoggingSystem()
-        {
-            return instance;
-        }
-        public void LogSomething(string message)
+        private readonly static LinkedList<string> myLog = new();
+        private static int PrintLogCounter = 1;
+        private static int WriteListToFileCounter = 1;
+        public static void LogSomething(string message)
         {
             myLog.AddLast(message);
         }
-        public void PrintLog()
+        public static void PrintLog()
         {
             Console.WriteLine("\n\nFull Log:\n");
             foreach (var item in myLog)
@@ -32,7 +24,7 @@ namespace BattleArena
                 PrintLogCounter++;
             }
         }
-        public void WriteListToFile()
+        public static void WriteListToFile()
         {
             string folderName = "\\MyLogs";
             string myFileName = "/myLogger.txt";
@@ -49,7 +41,7 @@ namespace BattleArena
                 WriteListToFileCounter++;
             }
         }
-        public string GetTimeStamp()
+        public static string GetTimeStamp()
         {
             return DateTime.Now.ToString("hh:mm:ss:ffff") + " by " + Environment.UserName.ToString();
         }

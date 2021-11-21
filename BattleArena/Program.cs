@@ -1,5 +1,6 @@
 ﻿using BattleArena.Items;
 using BattleArena.Pawn;
+using BattleArena.Items.OldVersion;
 using System;
 using System.Threading;
 
@@ -11,7 +12,8 @@ namespace BattleArena
         {
             UserIO userinteraction = new();
             Random randomNumberGenerator = new();
-            Hero[] playerList = { new Hero("Player 1", new CynradBow(randomNumberGenerator)), new Hero("Player 2", new CynradBow(randomNumberGenerator)) };
+            LatharSword latharSword = new(randomNumberGenerator);
+            Hero[] playerList = { new Hero("Player 1", new CynradBow(randomNumberGenerator)), new Hero("Player 2", new Adapter(latharSword)) };
             bool run = true;
             while (run)
             {

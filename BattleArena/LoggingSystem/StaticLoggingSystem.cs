@@ -4,8 +4,7 @@ using System.IO;
 
 namespace BattleArena
 {
-    //Static Implementation
-    //This Class is unused because I choose lazy Implementation
+    //Static Implementation - unused because I choose lazy Implementation
     static class StaticLoggingSystem
     {
         private readonly static LinkedList<string> myLog = new();

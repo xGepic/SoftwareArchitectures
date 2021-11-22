@@ -14,6 +14,13 @@ namespace BattleArena
             Random randomNumberGenerator = new();
             LatharSword latharSword = new(randomNumberGenerator);
             Hero[] playerList = { new Hero("Player 1", new CynradBow(randomNumberGenerator)), new Hero("Player 2", new Adapter(latharSword)) };
+            LuckyAchievment luckyAchievment = new();
+            RichAchievment richAchievment = new();
+            foreach (var item in playerList)
+            {
+                item.Subscribe(luckyAchievment);
+                item.Subscribe(richAchievment);
+            }
             bool run = true;
             while (run)
             {

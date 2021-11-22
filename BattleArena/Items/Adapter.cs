@@ -5,7 +5,7 @@ using System;
 namespace BattleArena.Items
 {
     //Adapter - Object Adapter
-    //I chose t he Object Adapter because I found It much more straightforward to implement and to comprehend
+    //I chose the Object Adapter because I found It much more straightforward to implement and to comprehend
     class Adapter : IEquipment
     {
         private readonly LatharSword LatharSword;

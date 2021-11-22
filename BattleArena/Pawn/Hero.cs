@@ -4,15 +4,34 @@ using System.Collections.Generic;
 
 namespace BattleArena.Pawn
 {
-    public class Hero
+    public class Hero : ISubject
     {
+        private List<IObserver> observers = new();
         private readonly IEquipment weapon;
         private int lastKeyInput;
         private List<Goblin> goblins = new();
         public int Health { get; private set; } = 100;
-        public int Coins { get; private set; } = 1;
+        private int _Coins = 1;
+        public int Coins
+        {
+            get { return _Coins; }
+            set
+            {
+                _Coins = value;
+                Alert();
+            }
+        }
         public int NumberOfGoblins => this.goblins.Count;
-        public int Leprechaun { get; private set; } = 0;
+        private int _Leprechaun = 0;
+        public int Leprechaun
+        {
+            get { return _Leprechaun; }
+            set
+            {
+                _Leprechaun = value;
+                Alert();
+            }
+        }
         public string Name { get; private set; }
         public Hero(string name, IEquipment equipment)
         {
@@ -31,7 +50,7 @@ namespace BattleArena.Pawn
         }
         public void UpdateCoins()
         {
-            this.Coins += this.Leprechaun + 1;
+            this.Coins += this._Leprechaun + 1;
         }
         public void UseGoblins(Hero other)
         {
@@ -49,7 +68,7 @@ namespace BattleArena.Pawn
             if (this.Coins > 1)
             {
                 this.Coins -= 2;
-                this.Leprechaun++;
+                this._Leprechaun++;
                 return true;
             }
             return false;
@@ -86,7 +105,20 @@ namespace BattleArena.Pawn
         }
         public override string ToString()
         {
-            return $"Name: {this.Name}\nCoins {this.Coins}\nLeprechaun: {this.Leprechaun}\nLastKeyInput: {this.lastKeyInput}\n\n";
+            return $"Name: {this.Name}\nCoins {this.Coins}\nLeprechaun: {this._Leprechaun}\nLastKeyInput: {this.lastKeyInput}\n\n";
+        }
+
+        //Observer
+        public void Subscribe(IObserver observer)
+        {
+            observers.Add(observer);
+        }
+        public void Alert()
+        {
+            observers.ForEach(o =>
+            {
+                o.Update(this);
+            });
         }
     }
 }

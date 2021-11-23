@@ -1,72 +1,10 @@
-1. UserIO Created at 04:58:11:5204 by siman
+1. UserIO Created at 08:53:44:1640 by siman
 
-2. LatharSword Created at 04:58:11:5294 by siman
+2. LatharSword Created at 08:53:44:1856 by siman
 
-3. CynradBow Created at 04:58:11:5295 by siman
+3. CynradBow Created at 08:53:44:1857 by siman
 
-4. Hero Created at 04:58:11:5297 by siman
+4. Hero Created at 08:53:44:1860 by siman
 
-5. Hero Created at 04:58:11:5299 by siman
-
-6. Goblin Created at 04:58:23:0284 by siman
-
-7. Goblin Created at 04:58:23:3321 by siman
-
-8. Goblin Created at 04:58:23:6119 by siman
-
-9. Goblin Created at 04:58:23:8761 by siman
-
-10. Goblin Created at 04:58:24:1400 by siman
-
-11. Goblin Created at 04:58:24:4202 by siman
-
-12. Goblin Created at 04:58:24:6999 by siman
-
-13. Goblin Created at 04:58:24:9640 by siman
-
-14. Goblin Created at 04:58:25:2440 by siman
-
-15. Goblin Created at 04:58:25:5483 by siman
-
-16. Goblin Created at 04:58:25:8682 by siman
-
-17. Goblin Created at 04:58:26:1960 by siman
-
-18. Goblin Created at 04:58:26:4761 by siman
-
-19. Goblin Created at 04:58:26:7799 by siman
-
-20. Goblin Created at 04:58:27:0601 by siman
-
-21. Goblin Created at 04:58:27:3640 by siman
-
-22. Goblin Created at 04:58:27:6440 by siman
-
-23. Goblin Created at 04:58:27:9241 by siman
-
-24. Goblin Created at 04:58:28:2039 by siman
-
-25. Goblin Created at 04:58:28:4919 by siman
-
-26. Goblin Created at 04:58:28:7960 by siman
-
-27. Goblin Created at 04:58:29:0921 by siman
-
-28. Goblin Created at 04:58:29:3559 by siman
-
-29. Goblin Created at 04:58:29:6359 by siman
-
-30. Goblin Created at 04:58:29:9241 by siman
-
-31. Goblin Created at 04:58:30:2199 by siman
-
-32. Goblin Created at 04:58:30:5480 by siman
-
-33. Goblin Created at 04:58:30:8441 by siman
-
-34. Goblin Created at 04:58:31:1720 by siman
-
-35. Goblin Created at 04:58:31:5481 by siman
-
-36. Goblin Created at 04:58:32:4361 by siman
+5. Hero Created at 08:53:44:1861 by siman
 

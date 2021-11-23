@@ -2,7 +2,6 @@
 using BattleArena.Pawn;
 using BattleArena.Items.OldVersion;
 using System;
-using System.Threading;
 
 namespace BattleArena
 {

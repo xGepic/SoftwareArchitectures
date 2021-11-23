@@ -103,10 +103,6 @@ namespace BattleArena.Pawn
             }
             return false;
         }
-        public override string ToString()
-        {
-            return $"Name: {this.Name}\nCoins {this.Coins}\nLeprechaun: {this._Leprechaun}\nLastKeyInput: {this.lastKeyInput}\n\n";
-        }
 
         //Observer
         public void Subscribe(IObserver observer)

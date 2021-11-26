@@ -7,7 +7,7 @@ namespace BattleArena
     //Singleton
     class LoggingSystem
     {
-        private static readonly LoggingSystem instance = new();
+        private static LoggingSystem instance = new();
         private readonly LinkedList<string> myLog = new();
         private int PrintLogCounter = 1;
         private int WriteListToFileCounter = 1;
@@ -17,6 +17,10 @@ namespace BattleArena
         }
         public static LoggingSystem GetLoggingSystem()
         {
+            if(instance == null)
+            {
+                instance = new();
+            }
             return instance;
         }
         public void LogSomething(string message)

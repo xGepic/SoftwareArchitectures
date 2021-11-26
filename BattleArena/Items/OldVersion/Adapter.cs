@@ -18,16 +18,4 @@ namespace BattleArena.Items
             other.ReduceHealth(LatharSword.Hit());
         }
     }
-    //Adapter - Class Adapter - unused because I chose the object adapter
-    class MyAdapter : LatharSword
-    {
-        public MyAdapter() : base(new Random())
-        {
-
-        }
-        public void Use(Hero other)
-        {
-            other.ReduceHealth(Hit());
-        }
-    }
 }

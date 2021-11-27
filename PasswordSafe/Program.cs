@@ -6,20 +6,17 @@ namespace PasswordSafeConsole
 {
     public class Program
     {
-        private static MasterPasswordRepository masterRepository = new MasterPasswordRepository("./master.pw");
+        private readonly static MasterPasswordRepository masterRepository = new("./master.pw");
         private static PasswordSafeEngine passwordSafeEngine = null;
-
-        public static void Main(String[] args)
+        public static void Main()
         {
             Console.WriteLine("Welcome to Passwordsafe");
-
             bool abort = false;
             bool unlocked = false;
             while (!abort)
             {
                 Console.WriteLine("Enter master (1), show all (2), show single (3), add (4), delete(5), set new master (6), Abort (0)");
-                int input = 0;
-                if (!int.TryParse(Console.ReadLine(), out input))
+                if (!int.TryParse(Console.ReadLine(), out int input))
                 {
                     input = -1;
                 }
@@ -121,10 +118,8 @@ namespace PasswordSafeConsole
                             Console.WriteLine("Invalid input");
                             break;
                         }
-
                 }
             }
-
             Console.WriteLine("Good bye !");
         }
     }

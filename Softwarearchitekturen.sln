@@ -5,7 +5,9 @@ VisualStudioVersion = 16.0.31613.86
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tasklist", "Tasklist\Tasklist.csproj", "{C625567F-F81A-4BF9-AFC6-DCC19BCFFBB8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BattleArena", "BattleArena\BattleArena.csproj", "{7BD2B9F4-6B84-4D70-B394-56AF0A74FB10}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BattleArena", "BattleArena\BattleArena.csproj", "{7BD2B9F4-6B84-4D70-B394-56AF0A74FB10}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PasswordSafe", "PasswordSafe\PasswordSafe.csproj", "{C0BEB51B-D4A2-4651-B6D7-393B7812DBAD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{7BD2B9F4-6B84-4D70-B394-56AF0A74FB10}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7BD2B9F4-6B84-4D70-B394-56AF0A74FB10}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7BD2B9F4-6B84-4D70-B394-56AF0A74FB10}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C0BEB51B-D4A2-4651-B6D7-393B7812DBAD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C0BEB51B-D4A2-4651-B6D7-393B7812DBAD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C0BEB51B-D4A2-4651-B6D7-393B7812DBAD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C0BEB51B-D4A2-4651-B6D7-393B7812DBAD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

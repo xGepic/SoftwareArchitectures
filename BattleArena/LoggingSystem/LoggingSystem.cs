@@ -5,7 +5,10 @@ using System.IO;
 namespace BattleArena
 {
     //Singleton
-    class LoggingSystem
+    //I chose Singleton + lazy implementation because I found it very straightfoward to use.
+    //It perfectly controls the access to the logger which is the shared resource.
+    //I call it in all of the constructers, a very easy way to keep track of the instantiations of all the classes.
+    sealed class LoggingSystem
     {
         private static LoggingSystem instance = new();
         private readonly LinkedList<string> myLog = new();

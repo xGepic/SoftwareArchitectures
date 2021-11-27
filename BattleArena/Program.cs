@@ -12,9 +12,12 @@ namespace BattleArena
             UserIO userinteraction = new();
             Random randomNumberGenerator = new();
             LatharSword latharSword = new(randomNumberGenerator);
+            //Here 1 Player gets the latharSword by using the adapter
             Hero[] playerList = { new Hero("Player 1", new CynradBow(randomNumberGenerator)), new Hero("Player 2", new Adapter(latharSword)) };
+            //Here we create both achievments
             LuckyAchievment luckyAchievment = new();
             RichAchievment richAchievment = new();
+            //And here we subscribe the heros to both of the achievments
             foreach (var item in playerList)
             {
                 item.Subscribe(luckyAchievment);

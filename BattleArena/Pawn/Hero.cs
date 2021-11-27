@@ -6,12 +6,13 @@ namespace BattleArena.Pawn
 {
     public class Hero : ISubject
     {
+        //List for the Observers
         private List<IObserver> observers = new();
         private readonly IEquipment weapon;
-        private int lastKeyInput;
         private List<Goblin> goblins = new();
         public int Health { get; private set; } = 100;
         private int _Coins = 1;
+        //Here we Alert every time the Value gets changed
         public int Coins
         {
             get { return _Coins; }
@@ -23,6 +24,7 @@ namespace BattleArena.Pawn
         }
         public int NumberOfGoblins => this.goblins.Count;
         private int _Leprechaun = 0;
+        //Here we Alert every time the Value gets changed
         public int Leprechaun
         {
             get { return _Leprechaun; }
@@ -37,9 +39,6 @@ namespace BattleArena.Pawn
         {
             this.Name = name;
             this.weapon = equipment;
-
-            this.lastKeyInput = -1;
-
             LoggingSystem myLog = LoggingSystem.GetLoggingSystem();
             myLog.LogSomething($"Hero Created at {myLog.GetTimeStamp()}");
         }

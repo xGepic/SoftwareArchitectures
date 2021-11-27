@@ -3,6 +3,8 @@ using System;
 
 namespace BattleArena
 {
+    //Achievement Class for the Observer with 2 Achievments
+    //1 triggers when the Hero has more than 5 Leprechauns and 1 that triggers when the player has more than 50 coints
     abstract class Achievment : IObserver
     {
         public string Achievmentname { get; set; }
@@ -19,7 +21,7 @@ namespace BattleArena
         {
             if (subject is Hero myHero)
             {
-                if (myHero.Coins > 4 && AchievmentDone == false)
+                if (myHero.Coins > 50 && AchievmentDone == false)
                 {
                     Console.WriteLine();
                     Console.WriteLine($"Achievment unlocked: {Achievmentname} by {myHero.Name}");

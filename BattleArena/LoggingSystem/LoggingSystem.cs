@@ -10,7 +10,7 @@ namespace BattleArena
     //I call it in all of the constructers, a very easy way to keep track of the instantiations of all the classes.
     sealed class LoggingSystem
     {
-        private static LoggingSystem instance = new();
+        private readonly static LoggingSystem instance = new();
         private readonly LinkedList<string> myLog = new();
         private int PrintLogCounter = 1;
         private int WriteListToFileCounter = 1;
@@ -20,10 +20,6 @@ namespace BattleArena
         }
         public static LoggingSystem GetLoggingSystem()
         {
-            if(instance == null)
-            {
-                instance = new();
-            }
             return instance;
         }
         public void LogSomething(string message)

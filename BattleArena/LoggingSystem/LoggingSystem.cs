@@ -52,7 +52,7 @@ namespace BattleArena
                 WriteListToFileCounter++;
             }
         }
-        public string GetTimeStamp()
+        public static string GetTimeStamp()
         {
             return DateTime.Now.ToString("hh:mm:ss:ffff") + " by " + Environment.UserName.ToString();
         }

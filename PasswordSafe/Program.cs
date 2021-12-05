@@ -6,7 +6,8 @@ namespace PasswordSafeConsole
 {
     public class Program
     {
-        private readonly static MasterPasswordRepository masterRepository = new("./master.pw");
+        //Here we use the new Method to get the new Path
+        private readonly static MasterPasswordRepository masterRepository = new(Tools.GetPath());
         private static PasswordSafeEngine passwordSafeEngine = null;
         public static void Main()
         {

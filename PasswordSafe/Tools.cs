@@ -4,16 +4,43 @@ namespace PasswordSafeConsole
 {
     public static class Tools
     {
-        public static string GetPath()
+        //As the solution was specifically developed for the very first customer, it cannot be installed on other machines.
+        //Seems that a more flexible configuration for locations of “master.pw” file and password.pw folder is required.
+        //I have chosen to save it in a Folder "Passwords" which is automatically created
+        //in there, there is a folder "Master for the master password.
+        //All other passwords will be stored in the "Passwords" folder outside of the "Master" folder.
+        public static string GetMasterPath()
         {
-            string folderName = "\\Master";
+            string folderName = "\\Passwords";
+            string masterFolder = "\\Master";
             string fileName = "/master.pw";
-            string myPath = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.Parent.FullName + folderName + fileName;
+            string myPath = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.Parent.FullName + folderName + masterFolder + fileName;
+            string tempPath = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.Parent.FullName + folderName + masterFolder;
+            if (!Directory.Exists(myPath))
+            {
+                Directory.CreateDirectory(tempPath);
+                return myPath;
+            }
             return myPath;
-            //As the solution was specifically developed for the very first customer, it cannot be installed on other machines.
-            //Seems that a more flexible configuration for locations of “master.pw” file and password.pw folder is required.
-            //I have chosen to save it in a Folder "Master" which is automatically created
-            //here the master.pw will be stored, this should run on every machine!
+        }
+        public static string GetPasswordPath()
+        {
+            string folderName = "\\Passwords";
+            string myPath = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.Parent.FullName + folderName;
+            if (!Directory.Exists(myPath))
+            {
+                Directory.CreateDirectory(myPath);
+            }
+            return myPath;
+        }
+        public static void deleteAll()
+        {
+            DirectoryInfo di = new(GetPasswordPath());
+            FileInfo[] files = di.GetFiles();
+            foreach (FileInfo file in files)
+            {
+                file.Delete();
+            }
         }
     }
 }

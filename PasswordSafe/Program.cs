@@ -7,7 +7,7 @@ namespace PasswordSafeConsole
     public class Program
     {
         //Here we use the new Method to get the new Path
-        private readonly static MasterPasswordRepository masterRepository = new(Tools.GetPath());
+        private readonly static MasterPasswordRepository masterRepository = new(Tools.GetMasterPath());
         private static PasswordSafeEngine passwordSafeEngine = null;
         public static void Main()
         {
@@ -35,7 +35,7 @@ namespace PasswordSafeConsole
                             unlocked = masterRepository.MasterPasswordIsEqualTo(masterPw);
                             if (unlocked)
                             {
-                                passwordSafeEngine = new PasswordSafeEngine("./passwords.pw", new CipherFacility(masterPw));
+                                passwordSafeEngine = new PasswordSafeEngine(Tools.GetPasswordPath(), new CipherFacility(masterPw));
                                 Console.WriteLine("unlocked");
                             }
                             else
@@ -107,11 +107,7 @@ namespace PasswordSafeConsole
                             Console.WriteLine("Enter new master password ! (Warning you will loose all already stored passwords)");
                             String masterPw = Console.ReadLine();
                             masterRepository.SetMasterPasswordPlain(masterPw);
-                            // urgent hotfix delete old passwords after changing the master
-                            if (Directory.Exists("./passwords.pw"))
-                            {
-                                Directory.Delete("./passwords.pw", true);
-                            }
+                            Tools.deleteAll();
                             break;
                         }
                     default:

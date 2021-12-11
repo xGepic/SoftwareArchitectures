@@ -1,4 +1,5 @@
-﻿using System.Security.Cryptography;
+﻿using System;
+using System.Security.Cryptography;
 using System.Text;
 
 namespace PasswordSafeConsole
@@ -31,6 +32,20 @@ namespace PasswordSafeConsole
             var keyBytes = Encoding.UTF8.GetBytes(password);
             using var md5 = MD5.Create();
             return md5.ComputeHash(keyBytes);
+        }
+        public byte[] Encrypt1(string plain)
+        {
+            using (var sha = new SHA256Managed())
+            {
+                byte[] textBytes = System.Text.Encoding.UTF8.GetBytes(plain);
+                byte[] hashBytes = sha.ComputeHash(textBytes);
+                return hashBytes;
+            }
+        }
+        public string Decrypt1(byte[] crypted)
+        {
+            string hash = BitConverter.ToString(crypted).Replace("-", string.Empty);
+            return hash;
         }
     }
 }

@@ -34,7 +34,7 @@ namespace PasswordSafeConsole
                             String masterPw = Console.ReadLine();
                             unlocked = masterRepository.MasterPasswordIsEqualTo(masterPw);
                             if (unlocked)
-                            {
+                            {        //Here we use the new Method to get the new Path
                                 passwordSafeEngine = new PasswordSafeEngine(Tools.GetPasswordPath(), new CipherFacility(masterPw));
                                 Console.WriteLine("unlocked");
                             }
@@ -107,7 +107,7 @@ namespace PasswordSafeConsole
                             Console.WriteLine("Enter new master password ! (Warning you will loose all already stored passwords)");
                             String masterPw = Console.ReadLine();
                             masterRepository.SetMasterPasswordPlain(masterPw);
-                            Tools.deleteAll();
+                            Tools.DeleteAll();        //Here we use the new Method to delete all existing passwords
                             break;
                         }
                     default:

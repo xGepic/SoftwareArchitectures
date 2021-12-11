@@ -9,7 +9,7 @@ namespace PasswordSafeConsole
         //I have chosen to save it in a Folder "Passwords" which is automatically created
         //in there, there is a folder "Master for the master password.
         //All other passwords will be stored in the "Passwords" folder outside of the "Master" folder.
-        public static string GetMasterPath()
+        public static string GetMasterPath() //Method to get the Path to the Master Folder
         {
             string folderName = "\\Passwords";
             string masterFolder = "\\Master";
@@ -23,7 +23,7 @@ namespace PasswordSafeConsole
             }
             return myPath;
         }
-        public static string GetPasswordPath()
+        public static string GetPasswordPath() //Method to get the Path to the Passwords Folder
         {
             string folderName = "\\Passwords";
             string myPath = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.Parent.FullName + folderName;
@@ -33,7 +33,7 @@ namespace PasswordSafeConsole
             }
             return myPath;
         }
-        public static void deleteAll()
+        public static void DeleteAll() //Method to delete all old passwords when a new Master Password is created
         {
             DirectoryInfo di = new(GetPasswordPath());
             FileInfo[] files = di.GetFiles();

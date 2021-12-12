@@ -34,8 +34,10 @@ namespace PasswordSafeConsole
                             String masterPw = Console.ReadLine();
                             unlocked = masterRepository.MasterPasswordIsEqualTo(masterPw);
                             if (unlocked)
-                            {        //Here we use the new Method to get the new Path
-                                passwordSafeEngine = new PasswordSafeEngine(Tools.GetPasswordPath(), new CipherFacility(masterPw));
+                            {   //Here we use the new Method to get the new Path
+                                passwordSafeEngine = new PasswordSafeEngine(Tools.GetPathToPasswordFile(), new CipherFacility(masterPw));
+                                //passwordSafeEngine = new PasswordSafeEngine(Tools.GetPasswordPath(), new CipherFacility(masterPw));
+                                //The commented line above is for storing each pw in a different file
                                 Console.WriteLine("unlocked");
                             }
                             else
@@ -77,7 +79,9 @@ namespace PasswordSafeConsole
                                 Console.WriteLine("Enter new name of password");
                                 String passwordName = Console.ReadLine();
                                 string password = Tools.DoubleCheck();//By setting a new password, it should be entered twice and checked for equality before writing to file.
-                                passwordSafeEngine.AddNewPassword(new PasswordInfo(password, passwordName));
+                                //passwordSafeEngine.AddNewPassword(new PasswordInfo(password, passwordName));
+                                //The commented line above is for storing each pw in a different file
+                                passwordSafeEngine.AddNewPassword2(new PasswordInfo(password, passwordName));
                             }
                             else
                             {

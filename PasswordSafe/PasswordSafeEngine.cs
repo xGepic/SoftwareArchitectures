@@ -1,6 +1,8 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Text;
 
 namespace PasswordSafeConsole
 {
@@ -24,7 +26,7 @@ namespace PasswordSafeConsole
         internal string GetPassword(string passwordName)
         {
             byte[] password = File.ReadAllBytes(Path.Combine(this.path, $"{passwordName}.pw"));
-            return this.cipherFacility.Decrypt2(password);
+            return this.cipherFacility.Decrypt(password);
         }
         internal void AddNewPassword(PasswordInfo passwordInfo)
         {
@@ -32,7 +34,12 @@ namespace PasswordSafeConsole
             {
                 Directory.CreateDirectory(this.path);
             }
-            File.WriteAllBytes(Path.Combine(this.path, $"{passwordInfo.PasswordName}.pw"), this.cipherFacility.Encrypt2(passwordInfo.Password));
+            File.WriteAllBytes(Path.Combine(this.path, $"{passwordInfo.PasswordName}.pw"), this.cipherFacility.Encrypt(passwordInfo.Password));
+        }
+        internal void AddNewPassword2(PasswordInfo passwordInfo) //AddPassword for single File 
+        {
+            string pwToAdd = UTF8Encoding.UTF8.GetString(this.cipherFacility.Encrypt2(passwordInfo.Password));
+            File.AppendAllText(this.path, pwToAdd + Environment.NewLine);
         }
         internal void DeletePassword(string passwordName)
         {

@@ -76,19 +76,7 @@ namespace PasswordSafeConsole
                             {
                                 Console.WriteLine("Enter new name of password");
                                 String passwordName = Console.ReadLine();
-                                string password, pwd1, pwd2;
-                                do
-                                {//By setting a new password, it should be entered twice and checked for equality before writing to file.
-                                    Console.WriteLine("Password: ");
-                                    pwd1 = Console.ReadLine();
-                                    Console.WriteLine("Please repeat the Password: ");
-                                    pwd2 = Console.ReadLine();
-                                    if (pwd1 != pwd2)
-                                    {
-                                        Console.WriteLine("\n[ERROR] Passwords are not equal!\n\n");
-                                    }
-                                } while (pwd1 != pwd2);
-                                password = pwd1;
+                                string password = Tools.DoubleCheck();//By setting a new password, it should be entered twice and checked for equality before writing to file.
                                 passwordSafeEngine.AddNewPassword(new PasswordInfo(password, passwordName));
                             }
                             else
@@ -116,19 +104,7 @@ namespace PasswordSafeConsole
                             unlocked = false;
                             passwordSafeEngine = null;
                             Console.WriteLine("Enter new master password ! (Warning you will loose all already stored passwords)");
-                            String masterPw, pwd1, pwd2;
-                            do
-                            {//By setting a new password, it should be entered twice and checked for equality before writing to file.
-                                Console.WriteLine("Password: ");
-                                pwd1 = Console.ReadLine();
-                                Console.WriteLine("Please repeat the Password: ");
-                                pwd2 = Console.ReadLine();
-                                if (pwd1 != pwd2)
-                                {
-                                    Console.WriteLine("\n[ERROR] Passwords are not equal!\n");
-                                }
-                            } while (pwd1 != pwd2);
-                            masterPw = pwd1;
+                            String masterPw = Tools.DoubleCheck();//By setting a new password, it should be entered twice and checked for equality before writing to file.
                             masterRepository.SetMasterPassword(masterPw);
                             Tools.DeleteAll();//Here we use the new Method to delete all existing passwords
                             break;

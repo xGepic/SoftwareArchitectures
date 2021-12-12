@@ -1,4 +1,5 @@
-﻿using System.IO;
+﻿using System;
+using System.IO;
 
 namespace PasswordSafeConsole
 {
@@ -6,7 +7,7 @@ namespace PasswordSafeConsole
     {
         //As the solution was specifically developed for the very first customer, it cannot be installed on other machines.
         //Seems that a more flexible configuration for locations of “master.pw” file and password.pw folder is required.
-        
+
         //I have chosen to save it in a Folder "Passwords" which is automatically created
         //in there, there is a folder "Master for the master password.
         //All other passwords will be stored in the "Passwords" folder outside of the "Master" folder.
@@ -42,6 +43,22 @@ namespace PasswordSafeConsole
             {
                 file.Delete();
             }
+        }
+        public static string DoubleCheck() //By setting a new password, it should be entered twice and checked for equality before writing to file.
+        {
+            string pwd1, pwd2;
+            do
+            {
+                Console.WriteLine("Password: ");
+                pwd1 = Console.ReadLine();
+                Console.WriteLine("Please repeat the Password: ");
+                pwd2 = Console.ReadLine();
+                if (pwd1 != pwd2)
+                {
+                    Console.WriteLine("\n[ERROR] Passwords are not equal!\n");
+                }
+            } while (pwd1 != pwd2);
+            return pwd1;
         }
     }
 }

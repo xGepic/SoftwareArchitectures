@@ -129,8 +129,8 @@ namespace PasswordSafeConsole
                                 }
                             } while (pwd1 != pwd2);
                             masterPw = pwd1;
-                            masterRepository.SetMasterPasswordPlain(masterPw);
-                            Tools.DeleteAll();        //Here we use the new Method to delete all existing passwords
+                            masterRepository.SetMasterPassword(masterPw);
+                            Tools.DeleteAll();//Here we use the new Method to delete all existing passwords
                             break;
                         }
                     default:

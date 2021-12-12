@@ -40,7 +40,7 @@ namespace PasswordSafeConsole
         {
             string SecurityKey = this.masterPw;
             byte[] toEncryptedArray = UTF8Encoding.UTF8.GetBytes(plain);// Getting the bytes of Input String.
-            MD5CryptoServiceProvider objMD5CryptoService = new(); //Gettting the bytes from the Security Key and Passing it to compute the Corresponding Hash Value.
+            MD5CryptoServiceProvider objMD5CryptoService = new(); //Getting the bytes from the Security Key and Passing it to compute the Corresponding Hash Value.
             byte[] securityKeyArray = objMD5CryptoService.ComputeHash(UTF8Encoding.UTF8.GetBytes(SecurityKey));
             objMD5CryptoService.Clear(); //De-allocatinng the memory after doing the Job.
             var objTripleDESCryptoService = new TripleDESCryptoServiceProvider

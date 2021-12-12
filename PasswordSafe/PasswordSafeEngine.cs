@@ -38,8 +38,9 @@ namespace PasswordSafeConsole
         }
         internal void AddNewPassword2(PasswordInfo passwordInfo) //AddPassword for single File 
         {
+            string nameToAdd = passwordInfo.PasswordName;
             string pwToAdd = UTF8Encoding.UTF8.GetString(this.cipherFacility.Encrypt2(passwordInfo.Password));
-            File.AppendAllText(this.path, pwToAdd + Environment.NewLine);
+            File.AppendAllText(this.path, nameToAdd + Environment.NewLine + pwToAdd + Environment.NewLine);
         }
         internal void DeletePassword(string passwordName)
         {

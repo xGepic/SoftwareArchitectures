@@ -24,7 +24,7 @@ namespace PasswordSafeConsole
         internal string GetPassword(string passwordName)
         {
             byte[] password = File.ReadAllBytes(Path.Combine(this.path, $"{passwordName}.pw"));
-            return this.cipherFacility.Decrypt(password);
+            return this.cipherFacility.Decrypt2(password);
         }
         internal void AddNewPassword(PasswordInfo passwordInfo)
         {
@@ -32,7 +32,7 @@ namespace PasswordSafeConsole
             {
                 Directory.CreateDirectory(this.path);
             }
-            File.WriteAllBytes(Path.Combine(this.path, $"{passwordInfo.PasswordName}.pw"), this.cipherFacility.Encrypt(passwordInfo.Password));
+            File.WriteAllBytes(Path.Combine(this.path, $"{passwordInfo.PasswordName}.pw"), this.cipherFacility.Encrypt2(passwordInfo.Password));
         }
         internal void DeletePassword(string passwordName)
         {

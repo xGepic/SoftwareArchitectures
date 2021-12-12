@@ -6,6 +6,7 @@ namespace PasswordSafeConsole
     {
         //As the solution was specifically developed for the very first customer, it cannot be installed on other machines.
         //Seems that a more flexible configuration for locations of “master.pw” file and password.pw folder is required.
+        
         //I have chosen to save it in a Folder "Passwords" which is automatically created
         //in there, there is a folder "Master for the master password.
         //All other passwords will be stored in the "Passwords" folder outside of the "Master" folder.

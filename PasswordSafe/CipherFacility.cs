@@ -33,8 +33,9 @@ namespace PasswordSafeConsole
             using var md5 = MD5.Create();
             return md5.ComputeHash(keyBytes);
         }
-        //NEW CODE
-        //https://qawithexperts.com/article/c-sharp/encrypt-password-decrypt-it-c-console-application-example/169
+        //The encryption method for the passwords should be exchangeable. Right now, the app
+        //supports only AES and there is no easy/foreseen way to introduce another algorithm.
+        //It would be great to switch between already implemented methods by proper configuration settings.
         public byte[] Encrypt2(string plain)
         {
             string SecurityKey = this.masterPw;

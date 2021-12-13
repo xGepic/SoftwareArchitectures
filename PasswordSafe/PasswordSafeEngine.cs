@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Text;
 
 namespace PasswordSafeConsole
 {
@@ -28,7 +27,6 @@ namespace PasswordSafeConsole
             byte[] password = File.ReadAllBytes(Path.Combine(this.path, $"{passwordName}.pw"));
             return this.cipherFacility.Decrypt(password);
         }
-
         internal void AddNewPassword(PasswordInfo passwordInfo)
         {
             if (!Directory.Exists(this.path))

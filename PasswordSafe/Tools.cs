@@ -60,18 +60,5 @@ namespace PasswordSafeConsole
             } while (pwd1 != pwd2);
             return pwd1;
         }
-        //Store all Passwords in a single file
-        public static string GetPathToPasswordFile()
-        {
-            string folderName = "\\Passwords";
-            string fileName = "/myPasswords.pw";
-            string myPath = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.Parent.FullName + folderName + fileName;
-            if (!Directory.Exists(myPath))
-            {
-                Directory.CreateDirectory(GetPasswordPath());
-                return myPath;
-            }
-            return myPath;
-        }
     }
 }

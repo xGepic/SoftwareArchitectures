@@ -64,7 +64,8 @@ namespace PasswordSafeConsole
                             {
                                 Console.WriteLine("Enter password name");
                                 String passwordName = Console.ReadLine();
-                                Console.WriteLine(passwordSafeEngine.GetPassword(passwordName));
+                                //Console.WriteLine(passwordSafeEngine.GetPassword(passwordName));
+                                Console.WriteLine(passwordSafeEngine.GetPassword2(passwordName));
                             }
                             else
                             {

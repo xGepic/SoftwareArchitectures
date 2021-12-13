@@ -28,6 +28,22 @@ namespace PasswordSafeConsole
             byte[] password = File.ReadAllBytes(Path.Combine(this.path, $"{passwordName}.pw"));
             return this.cipherFacility.Decrypt(password);
         }
+        internal string GetPassword2(string passwordName)
+        {
+            int counter = 1;
+            string filename = Tools.GetPathToPasswordFile();
+            var lines = File.ReadAllLines(filename);
+            foreach (var line in lines)
+            {
+                if (line == passwordName)
+                {
+                    //to do
+                }
+                counter++;
+            }
+            return null;
+        }
+
         internal void AddNewPassword(PasswordInfo passwordInfo)
         {
             if (!Directory.Exists(this.path))

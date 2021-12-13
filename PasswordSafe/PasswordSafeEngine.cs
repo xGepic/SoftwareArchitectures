@@ -28,7 +28,6 @@ namespace PasswordSafeConsole
             byte[] password = File.ReadAllBytes(Path.Combine(this.path, $"{passwordName}.pw"));
             return this.cipherFacility.Decrypt(password);
         }
-
         internal void AddNewPassword(PasswordInfo passwordInfo)
         {
             if (!Directory.Exists(this.path))
@@ -36,6 +35,13 @@ namespace PasswordSafeConsole
                 Directory.CreateDirectory(this.path);
             }
             File.WriteAllBytes(Path.Combine(this.path, $"{passwordInfo.PasswordName}.pw"), this.cipherFacility.Encrypt(passwordInfo.Password));
+        }
+        internal void AddNewPassword2(PasswordInfo passwordInfo)
+        {
+            File.AppendAllText(this.path, passwordInfo.PasswordName + Environment.NewLine);
+            using var stream = new FileStream(path, FileMode.Append);
+            byte[] bytes = this.cipherFacility.Encrypt2(passwordInfo.Password);
+            stream.Write(bytes, 0, bytes.Length);
         }
         internal void DeletePassword(string passwordName)
         {

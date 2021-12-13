@@ -60,5 +60,18 @@ namespace PasswordSafeConsole
             } while (pwd1 != pwd2);
             return pwd1;
         }
+        public static string GetPasswordFilePath()
+        {
+            string folderName = "\\Passwords";
+            string fileName = "/myPasswords.pw";
+            string myPath = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.Parent.FullName + folderName + fileName;
+            string tempPath = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.Parent.FullName + folderName;
+            if (!Directory.Exists(myPath))
+            {
+                Directory.CreateDirectory(tempPath);
+                return myPath;
+            }
+            return myPath;
+        }
     }
 }

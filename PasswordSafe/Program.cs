@@ -61,7 +61,7 @@ namespace PasswordSafeConsole
                             {
                                 Console.WriteLine("Enter password name");
                                 String passwordName = Console.ReadLine();
-                                Console.WriteLine(passwordSafeEngine.GetPassword2(passwordName));
+                                Console.WriteLine(passwordSafeEngine.GetPassword(passwordName));
                             }
                             else
                             {
@@ -77,7 +77,7 @@ namespace PasswordSafeConsole
                                 String passwordName = Console.ReadLine();
                                 string password = Tools.DoubleCheck();//By setting a new password, it should be entered twice and checked for equality before writing to file.
                                 //passwordSafeEngine.AddNewPassword(new PasswordInfo(password, passwordName));
-                                passwordSafeEngine.AddNewPassword2(new PasswordInfo(password, passwordName));
+                                passwordSafeEngine.AddNewPassword(new PasswordInfo(password, passwordName));
                             }
                             else
                             {

@@ -35,13 +35,6 @@ namespace PasswordSafeConsole
             }
             File.WriteAllBytes(Path.Combine(this.path, $"{passwordInfo.PasswordName}.pw"), this.cipherFacility.Encrypt(passwordInfo.Password));
         }
-        internal void AddNewPassword2(PasswordInfo passwordInfo)
-        {
-            File.AppendAllText(this.path, passwordInfo.PasswordName + Environment.NewLine);
-            using var stream = new FileStream(path, FileMode.Append);
-            byte[] bytes = this.cipherFacility.Encrypt2(passwordInfo.Password);
-            stream.Write(bytes, 0, bytes.Length);
-        }
         internal void DeletePassword(string passwordName)
         {
             File.Delete(Path.Combine(this.path, $"{passwordName}.pw"));
